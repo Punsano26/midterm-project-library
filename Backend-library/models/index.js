@@ -2,12 +2,14 @@ const sequelize = require("./db");
 const Sequelize = require("sequelize");
 const User = require("./user.model");
 const Role = require("./role.model");
+const Library = require("./library.model");
+
 
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-
+db.Library = Library;
 db.User = User;
 db.Role = Role;
 //Assosiation
