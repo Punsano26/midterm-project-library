@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div className='container flex flex-row flex-wrap items-center justify-center mx-auto'>
       <Search 
-      libraries={libraries}
+      library={libraries}
       setFilteredLibraries={setFilteredLibraries}
       />
       <Libraries libraries={filteredLibraries} />
