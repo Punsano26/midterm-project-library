@@ -64,10 +64,10 @@ const Card = ({
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p>{author}</p>
-        <p>{publicationYear}</p>
-        <p>{category}</p>
-        <p>{page}</p>
+        <p><span className="font-bold">ผู้แต่ง: </span>{author}</p>
+        <p><span className="font-bold">ปีที่ตีพิมพ์: </span>{publicationYear}</p>
+        <p><span className="font-bold">หมวดหมู่: </span>{category}</p>
+        <p><span className="font-bold">จำนวนหน้า: </span>{page}<span> หน้า</span></p>
         {user &&
           (user.roles.includes("ROLE_MODERATOR") ||
             user.roles.includes("ROLE_ADMIN")) && (

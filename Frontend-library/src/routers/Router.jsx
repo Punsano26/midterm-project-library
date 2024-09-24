@@ -11,6 +11,7 @@ const Login = lazy(() => import("../page/Login"));
 const Register = lazy(() => import("../page/Register"));
 // import Editbook from "../page/Editbook";
 const Editbook = lazy(() => import("../page/Editbook"));
+const Userprofile = lazy(() => import("../page/Userprofile"));
 
 import NotAllowed from "../page/NotAllowed";
 import ModOrAdminPage from "../page/ModOrAdminPage";
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "not-allowed",
         element: <NotAllowed />,
+      },
+      {
+        path: "userprofile",
+        element: <Userprofile />,
       },
     ],
   },

@@ -3,7 +3,7 @@ import Libraries from '../components/Libraries';
 import Search from '../components/Search';
 import LibrariesService from '../services/library.service';
 import Swal from 'sweetalert2';
-
+import FillterCandY from '../components/FillterCandY';
 
 
 
@@ -31,14 +31,27 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='container flex flex-row flex-wrap items-center justify-center mx-auto'>
+    <div className='container flex flex-col items-center justify-center mx-auto'>
+  {/* Section for Search and Filters */}
+  <div className="w-full flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 lg:space-x-6 mb-8">
+    <div className="w-full lg:w-auto">
+      {/* Search Component */}
       <Search 
-      library={libraries}
-      setFilteredLibraries={setFilteredLibraries}
+        library={libraries}
+        setFilteredLibraries={setFilteredLibraries}
       />
-      <Libraries libraries={filteredLibraries} />
-      
     </div>
+
+    <div className="w-full lg:w-auto">
+      {/* Category and Year Filter Component */}
+      <FillterCandY libraries={libraries} setFilteredLibraries={setFilteredLibraries} />
+    </div>
+  </div>
+
+  {/* Section for Libraries */}
+  <Libraries libraries={filteredLibraries} />
+</div>
+
   );
 }
 
