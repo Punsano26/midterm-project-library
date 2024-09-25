@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Loginbtn from "./Loginbtn";
 import Registerbtn from "./Registerbtn";
-import UserProfile from "./UserProfile";
+import UserProfile from "./Userprofile";
 import { useAuthContext } from "../contexts/AuthContext";
 
 const Nav = () => {
