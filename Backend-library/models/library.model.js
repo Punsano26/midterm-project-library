@@ -31,6 +31,11 @@ const Library = sequelize.define("library", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  price: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  
 });
 Library.sync({ force: false })
   .then(() => {

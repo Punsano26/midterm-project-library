@@ -6,18 +6,18 @@ const FillterCandY = ({ libraries, setFilteredLibraries }) => {
 
   const handleFilter = () => {
     let filtered = libraries;
-    
+
     if (categoryFillter) {
       filtered = filtered.filter((lib) => lib.category === categoryFillter);
     }
-    
+
     if (yearFilter) {
       filtered = filtered.filter(
         (lib) => lib.publicationYear === parseInt(yearFilter)
       );
     }
-    
-    setFilteredLibraries(filtered); 
+
+    setFilteredLibraries(filtered);
   };
 
   const handleCategoryChange = (e) => {
@@ -48,9 +48,11 @@ const FillterCandY = ({ libraries, setFilteredLibraries }) => {
         >
           <option value="">เลือกหมวดหมู่</option>
           <option value="หนังสือผู้ใหญ่">หนังสือผู้ใหญ่</option>
-          <option value="Non-fiction">Non-fiction</option>
-          <option value="Comics">Comics</option>
-          <option value="Science">Science</option>
+          <option value="วารสาร">วารสาร</option>
+          <option value="หนังสือการ์ตูน">หนังสือการ์ตูน</option>
+          <option value="นิวนิยาย">นิวนิยาย</option>
+          <option value="สารคดีประวัติศาสตร์">สารคดีประวัติศาสตร์</option>
+          <option value="การศึกษา">การศึกษา</option>
         </select>
       </div>
 
@@ -59,17 +61,20 @@ const FillterCandY = ({ libraries, setFilteredLibraries }) => {
         <label htmlFor="year" className="text-gray-600 font-semibold mb-1">
           Filter by year
         </label>
-        <select 
+        <select
           id="year"
           value={yearFilter}
           onChange={handleYearChange}
           className="p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200"
         >
-          <option value=''>All Years</option>
-          <option value='2024'>2024</option>
-          <option value='2023'>2023</option>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
+          <option value="">All Years</option>
+          {Array.from({ length: 2025 - 1990 + 1 }, (v, i) => 1990 + i).map(
+            (year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            )
+          )}
         </select>
       </div>
     </div>

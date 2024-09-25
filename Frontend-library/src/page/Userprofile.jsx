@@ -15,7 +15,7 @@ const Userprofile = () => {
         ) {
             return str;
         }
-        const maskedStr = str.slice(0, start) + '*'.repeat(end - start) + str.substring(end);
+        const maskedStr = str.slice(0, start) + '*'.repeat(20) + str.substring(end);
         return maskedStr;
     };
   return (
@@ -31,9 +31,13 @@ const Userprofile = () => {
                 </div>
                 <div className=" ">
                     <div className="text-center px-14">
-                        <h2 className="text-gray-800 text-3xl font-bold">Mohit Dhiman</h2>
-                        <a className="text-gray-400 mt-2 hover:text-blue-500" href="https://www.instagram.com/immohitdhiman/" target="BLANK()">@immohitdhiman</a>
-                        <p className="mt-2 text-gray-500 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                        <h2 className="text-gray-800 text-3xl font-bold">{user.username}</h2>
+                        <a className="text-gray-400 mt-2 hover:text-blue-500" href="https://www.instagram.com/immohitdhiman/" target="BLANK()">@{user.username}</a>
+                        <p className="mt-2 text-gray-500 text-sm">Email: {user.email}</p>
+                        <p>Role: {user?.roles.map((role) => role).join(", ")}</p>
+                        <p>Token:{" "}
+                            {maskingString(user.accessToken, 3, user.accessToken.length - 3)}
+                        </p>
                     </div>
                     <hr className="mt-6" />
                     <div className="flex  bg-gray-50 ">

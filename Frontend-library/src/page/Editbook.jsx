@@ -14,6 +14,7 @@ const Editbook = () => {
     publicationYear: '',
     category: '',
     page: '',
+    price: '',
   });
 
   //Get LibraryBook By ID
@@ -59,7 +60,7 @@ useEffect(() => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md mt-10">
-      <h2 className="text-2xl font-bold mb-6">Add New Book</h2>
+      <h2 className="text-2xl font-bold mb-6">Edit a Book</h2>
       <form onSubmit={handleSubmit}>
         {/* Title */}
         <div className="mb-4">
@@ -147,6 +148,19 @@ useEffect(() => {
             type="number"
             name="page"
             value={libraryBook.page}
+            onChange={handleChange}
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
+
+         {/* Price page */}
+         <div className="mb-4">
+          <label className="block text-sm font-medium mb-1">Price</label>
+          <input
+            type="number"
+            name="price"
+            value={libraryBook.price}
             onChange={handleChange}
             className="input input-bordered w-full"
             required

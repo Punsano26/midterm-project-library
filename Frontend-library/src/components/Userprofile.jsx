@@ -1,10 +1,34 @@
 import { useAuthContext} from '../contexts/AuthContext'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const Userprofile = () => {
+  const navigate = useNavigate()
   const { logout } = useAuthContext()
   const handleLogout = async () => {
-   logout()
-  }
+    try {
+      // เรียกใช้ฟังก์ชัน logout
+      await logout();
+  
+      Swal.fire({
+        icon: "success",
+        title: "User logged out successfully",
+        text: "Logout success now!",
+        timer: 2000,
+      });
+  
+      // ย้ายหน้าไปยังหน้าแรก
+      navigate("/");
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error?.response?.data?.message || error.message,
+        timer: 2000,
+      });
+    }
+  };
+  
   return (
     <div>
         <div className="dropdown dropdown-end">

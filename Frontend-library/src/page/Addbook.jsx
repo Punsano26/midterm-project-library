@@ -13,6 +13,7 @@ const AddForm = () => {
     publicationYear: '',
     category: '',
     page: '',
+    price: '',
   });
 
   const handleChange = (e) => {
@@ -144,6 +145,18 @@ const AddForm = () => {
             type="number"
             name="page"
             value={libraryBook.page}
+            onChange={handleChange}
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
+        {/* Price page */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-1">Price</label>
+          <input
+            type="number"
+            name="price"
+            value={libraryBook.price}
             onChange={handleChange}
             className="input input-bordered w-full"
             required

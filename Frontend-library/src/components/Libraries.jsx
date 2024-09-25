@@ -15,6 +15,7 @@ const Libraries = ({ libraries }) => {
           publicationYear={library.publicationYear}
           category={library.category}
           page={library.page}
+          price={library.price}
           />
         );
       })}

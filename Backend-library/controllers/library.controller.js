@@ -2,11 +2,11 @@ const Library = require("../models/library.model");
 
 //create and Save a new Library
 exports.create = async (req, res) => {
-  const { title, img, author, publicationYear, category, page } = req.body;
+  const { title, img, author, publicationYear, category, page, price } = req.body;
   console.log(req.body);
 
   //validate data
-  if (!title || !img || !author || !publicationYear || !category || !page) {
+  if (!title || !img || !author || !publicationYear || !category || !page || !price) {
     res.status(400).send({
       message: "tile, img, author, publicationYear, category, page required!",
     });
@@ -25,6 +25,7 @@ exports.create = async (req, res) => {
         publicationYear: publicationYear,
         category: category,
         page: page,
+        price: price,
       };
       Library.create(newBook)
         .then((data) => {
