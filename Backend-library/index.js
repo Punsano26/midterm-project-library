@@ -7,9 +7,10 @@ const authRouter = require("./routers/auth.router");
 const db = require("./models/index");
 const role = db.Role
 const cors = require("cors");
+const FUrl = process.env.FRONTEND_URL;
 
 const corsOption = {
-    origin: "http://localhost:5173",
+    origin: FUrl,
   };
 
 //   db.sequelize.sync({ force: true }).then(() => {

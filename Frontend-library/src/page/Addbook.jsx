@@ -76,6 +76,11 @@ const AddForm = () => {
         {/* Image URL */}
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">Image URL</label>
+          {libraryBook.img && (
+            <div className='flex justify-center gap-2 py-4'>
+              <img src={libraryBook.img} className="h-32" />
+            </div>
+          )}
           <input
             type="text"
             name="img"
