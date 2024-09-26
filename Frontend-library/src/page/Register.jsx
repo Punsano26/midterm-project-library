@@ -46,7 +46,8 @@ const Register = () => {
     }
   };
   return (
-    <div className="w-96 backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
+    <div className="flex justify-center items-center mt-16">
+      <div className="w-96 backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
       <h2 className="text-2xl font-bold pb-5">Register</h2>
       
         <div className="mb-4">
@@ -110,6 +111,8 @@ const Register = () => {
         </div>
       
     </div>
+    </div>
+    
   );
 };
 

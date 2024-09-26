@@ -53,6 +53,8 @@ const Login = () => {
     }
  };
   return (
+    <div className="flex justify-center items-center mt-16">
+
     <div className="w-96 backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
       <h2 className="text-2xl font-bold pb-5">Login</h2>
 
@@ -102,6 +104,7 @@ const Login = () => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 };
