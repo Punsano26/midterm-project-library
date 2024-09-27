@@ -80,7 +80,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 shadow-lg">
     <div className="flex-1">
       <a href="/" className="btn btn-ghost text-xl">
         <span className="text-base-100 font-bold text-red-600 text-3xl font-thin">
