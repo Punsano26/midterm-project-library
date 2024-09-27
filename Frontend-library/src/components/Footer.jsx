@@ -2,13 +2,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 mt-5">
     <nav className="grid grid-flow-col gap-4">
       <a className="link link-hover">About us</a>
       <a className="link link-hover">Contact</a>
       <a className="link link-hover">Jobs</a>
       <a className="link link-hover">Press kit</a>
     </nav>
+    {/* push */}
     <nav>
       <div className="grid grid-flow-col gap-4">
         <a href='https://x.com/SeNan_Life?t=OduqyVvxrS3zWRSscmBuxg&s=09' target="_blank">
