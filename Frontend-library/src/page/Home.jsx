@@ -4,7 +4,7 @@ import Search from '../components/Search';
 import LibrariesService from '../services/library.service';
 import Swal from 'sweetalert2';
 import FillterCandY from '../components/FillterCandY';
-
+import  {BranderSlider}  from '../components/BranderSlider';
 
 
 const Home = () => {
@@ -32,6 +32,7 @@ const Home = () => {
 
   return (
     <div className='container flex flex-col items-center justify-center mx-auto'>
+      <BranderSlider />
   {/* Section for Search and Filters */}
   <div className="w-full flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 lg:space-x-6 mb-8">
     <div className="w-full lg:w-auto">
