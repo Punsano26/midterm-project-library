@@ -30,9 +30,9 @@ const Userprofile = () => {
   };
   
   return (
-    <div className="relative z-50">
+    <div className="flex items-center">
     {/* Dropdown for User Profile */}
-    <div className="dropdown dropdown-top">
+    <div className="dropdown dropdown-left">
       <div
         tabIndex={0}
         role="button"
@@ -47,7 +47,8 @@ const Userprofile = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-compact dropdown-content bg-base-100 rounded-box z-[1] mb-3 w-52 p-2 shadow md:w-64 lg:w-72"
+        className="menu menu-compact dropdown-content bg-base-100 rounded-box z-[9999] mt-3 w-52 p-2 shadow md:w-64 lg:w-72"
+        style={{ position: 'absolute' }}  
       >
         <li>
           <a href='/userprofile' className="justify-between">
@@ -61,7 +62,6 @@ const Userprofile = () => {
     </div>
   </div>
   
-
   )
 }
 
