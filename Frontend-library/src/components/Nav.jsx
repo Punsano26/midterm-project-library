@@ -139,55 +139,56 @@ const Nav = () => {
     </div>
   
     {/* Mobile menu button */}
-    <div className="md:hidden">
-      <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </label>
-        <ul
-          tabIndex={0}
-          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          {user ? (
-            <>
-              <li>
-                <a>Welcome, {user.username}</a>
-              </li>
-              {user.roles.map((role, index) => (
-                <li key={index}>
-                  <a>{role}</a>
-                </li>
-              ))}
-              <li>
-                <UserProfile />
-              </li>
-            </>
-          ) : (
-            <>
-              <li className="mb-2">
-                <Registerbtn />
-              </li>
-              <li>
-                <Loginbtn />
-              </li>
-            </>
-          )}
-        </ul>
-      </div>
-    </div>
+    <div className="md:hidden relative z-50">
+  <div className="dropdown dropdown-end">
+    <label tabIndex={0} className="btn btn-ghost md:hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </label>
+    <ul
+      tabIndex={0}
+      className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"
+    >
+      {user ? (
+        <>
+          <li>
+            <a>Welcome, {user.username}</a>
+          </li>
+          {user.roles.map((role, index) => (
+            <li key={index}>
+              <a>{role}</a>
+            </li>
+          ))}
+          <li>
+            <UserProfile />
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="mb-2">
+            <Registerbtn />
+          </li>
+          <li>
+            <Loginbtn />
+          </li>
+        </>
+      )}
+    </ul>
+  </div>
+</div>
+
   
     {/* Theme controller */}
     <label className="grid cursor-pointer place-items-center ml-2">
