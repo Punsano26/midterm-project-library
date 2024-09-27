@@ -32,7 +32,7 @@ const Userprofile = () => {
   return (
     <div className="flex items-center">
     {/* Dropdown for User Profile */}
-    <div className="dropdown dropdown-top">
+    <div className="dropdown dropdown-bottom">
       <div
         tabIndex={0}
         role="button"
