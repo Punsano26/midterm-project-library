@@ -1,76 +1,80 @@
-import { Carousel, IconButton } from "@material-tailwind/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
-export function BranderSlider() {
+import { IoArrowForwardOutline, IoArrowBackOutline } from "react-icons/io5";
+
+import slide_image from "../assets/lib1.jpg";
+import slide_image2 from "../assets/lib2.jpg";
+import slide_image3 from "../assets/lib3.jpg";
+import slide_image4 from "../assets/lib4.jpg";
+import slide_image5 from "../assets/lib5.jpg";
+
+
+import '../App.css'
+
+const BranderSlider = () => {
   return (
-    <Carousel
-      className="rounded-xl"
-      autoplay={true}  // ให้รูปภาพสไลด์อัตโนมัติ
-      loop={true}      // วนซ้ำเมื่อจบการสไลด์
-      transition={{ duration: 500 }} // ตั้งค่าความเร็วของการเปลี่ยนรูปภาพ
-      prevArrow={({ handlePrev }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handlePrev}
-          className="!absolute top-2/4 left-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-        </IconButton>
-      )}
-      nextArrow={({ handleNext }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handleNext}
-          className="!absolute top-2/4 !right-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </IconButton>
-      )}
-    >
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
+    <div className="container">
+      <h1 className="heading font-thin">Library Gallery</h1>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        loop={true}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: true,
+        }}
+        pagination={{
+          el: '.swiper-pagination',
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper-container"
+      >
+        <SwiperSlide>
+          <img src={slide_image} alt="slide 1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image2} alt="slide 2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image3} alt="slide 3" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image4} alt="slide 4" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image5} alt="slide 5" />
+        </SwiperSlide>
+
+        {/* ปุ่มเลื่อนซ้ายขวา */}
+        <div className="slider-controler right-24">
+          <div className="swiper-button-prev slider-arrow">
+            <IoArrowBackOutline size={30} />
+          </div>
+          <div className="swiper-button-next slider-arrow">
+            <IoArrowForwardOutline size={30} />
+          </div>
+        </div>
+        {/* Pagination (จุดเล็ก ๆ สำหรับเลือกภาพ) */}
+        <div className="swiper-pagination flex justify-center items-center"></div>
+      </Swiper>
+    </div>
   );
-}
+};
+
+export default BranderSlider;

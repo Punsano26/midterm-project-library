@@ -4,7 +4,7 @@ import Search from '../components/Search';
 import LibrariesService from '../services/library.service';
 import Swal from 'sweetalert2';
 import FillterCandY from '../components/FillterCandY';
-import  {BranderSlider}  from '../components/BranderSlider';
+import BranderSlider from '../components/BranderSlider';
 
 
 const Home = () => {
